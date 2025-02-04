@@ -34,7 +34,7 @@ Using these methods, such as short variable names or text-searching JSON instead
 
 1. Use short names (max 4 chars) → 14 bytes. :+1:
 2. Names with 5–14 chars consume more memory → 28 bytes.
-3. Names with 15–24 chars are memory-hungry → 56 bytes. ::-1
+3. Names with 15–24 chars are memory-hungry → 56 bytes. :-1:
 
 This memory allocation is related only to the variable name.
 ```js
@@ -138,9 +138,10 @@ console.log("Hello World!");
 
 # Variables and Lazy Load
 ## Bad Practice
-Defining global variables in this way is very costly from memory point of view.
 
-Long variable names and all the data loaded constantly into memory. :thumbsdown:
+Defining global variables this way is very costly from a memory perspective.
+
+Long variable names and constant data loading into memory are inefficient. :-1:
 
 ```js
 // Define data in multiple JSONs
