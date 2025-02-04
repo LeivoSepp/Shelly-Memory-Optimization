@@ -18,6 +18,7 @@ Small scripts can run without optimization, but as they grow, they quickly hit t
     - [Define data](#define-data)
     - [Accessing to the data.](#accessing-to-the-data)
 - [Parsing JSON](#parsing-json)
+  - [Author](#author)
 
 
 > [!IMPORTANT]
@@ -279,3 +280,9 @@ let rssi = data.substring(rsId, data.indexOf("}", rsId));
 // Memory Used: 448
 
 ```
+
+## Author
+
+Created by Leivo Sepp, 07.01.2025
+
+[Shelly Script Memory Optimization - GitHub Repository](https://github.com/LeivoSepp/Shelly-Memory-Optimization)
