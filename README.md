@@ -213,7 +213,8 @@ function tRt() {
 
 **Bad Practice**
 
-It's a bad practice to load the entire dataset into memory. The outcome is the same as the previous example. :-1:
+It's a bad practice to load the entire dataset into memory.  
+The outcome is the same as the previous example. :-1:
 
 ```js
 // Load full data into variable and use it partially
@@ -224,7 +225,7 @@ let totl = tRt.VRK1.dRt + tRt.VRK1.nRt + tRt.VRK1.dMRt + tRt.VRK1.hMRt;
 
 **Better Practice**
 
-There is only a peak memory load when the program reads the data, and after that, the memory is released. :+1:
+There is only a peak memory load when the program reads the data, and after that, the memory is released. :+1:  
 However, creating variables from that data consumes more memory than without a variable.
 
 ```js
@@ -239,7 +240,8 @@ let totl = vrk1.dRt + vrk1.nRt + vrk1.dMRt + vrk1.hMRt;
 Two important things to consider here:
 
 1. The only variable should be the sum of all the values.
-2. The variable name should be exactly the same as the function name to gain the biggest benefit. I just randomly figured this out. :thumbsup:
+2. The variable name should be exactly the same as the function name to gain the biggest benefit. 
+   - I just randomly figured this out :thumbsup:
 
 ```js
 // Load data as needed, without creating variable
@@ -254,7 +256,7 @@ let tRt = tRt().VRK1.dRt + tRt().VRK1.nRt + tRt().VRK1.dMRt + tRt().VRK1.hMRt;
 ```
 
 # Parsing JSON 
-Use string search to extract data from large JSON. This is a significant memory improvement. :+1:
+Use string search to extract data from large JSON. This is a significant memory improvement. :+1:  
 Do not parse the entire JSON into memory. :-1:
 
 ```js
