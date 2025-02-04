@@ -32,9 +32,9 @@ Using these methods, such as short variable names or text-searching JSON instead
 
 # Variable names
 
-1. Use short names, max 4 char -> 14 bytes. :thumbsup:
-2. Names 5-14 char consumes more memory -> 28 bytes.
-3. Names 15-24 char consumes even more memory -> 56 bytes. :thumbsdown:
+1. Use short names (max 4 chars) → 14 bytes. :+1:
+2. Names with 5–14 chars consume more memory → 28 bytes.
+3. Names with 15–24 chars are memory-hungry → 56 bytes. ::-1
 
 This memory allocation is related only to the variable name.
 ```js
@@ -52,9 +52,9 @@ let mySpecialExtraLongName;
 ```
 
 # Values
-1. Use short values if possible, strings less than 9 chars. :thumbsup:
-2. Array and JSON are in same size if json names are short. 
-3. Keep names inside a JSON max 4 chars. :thumbsup:
+1. Use short values when possible: strings under 9 chars. :+1:
+2. Arrays and JSON take up the same space if JSON keys are short.
+3. Keep JSON key names to a maximum of 4 chars. :+1:
 
 ```js
 // Int value until 8191
@@ -87,7 +87,7 @@ let json = {};
 
 // JSON each value int->14 byte, string->28
 let json = {car: "volvo", year: 2016};
-// Memory used: 70 bytes (json + string + int)
+// Memory used: 70 bytes, same as Array
 
 // JSON, long names > 4 chars
 let json = {coolCar: "volvo", prodYear: 2016};
@@ -95,12 +95,13 @@ let json = {coolCar: "volvo", prodYear: 2016};
 ```
 
 # Function names
-1. Use short names, max 4 char -> 70 bytes. :thumbsup:
-2. Names 5-14 char consumes more memory -> 84 bytes.
-3. Names 15-24 char consumes even more memory -> 98 bytes. :thumbsdown:
+1. Use short names (max 4 chars) → 70 bytes. :thumbsup:
+2. Names with 5–14 chars consume more memory → 84 bytes.
+3. Names with 15–24 chars are memory hungry → 98 bytes. :thumbsdown:
 
 > [!TIP]
-> The initial amount of the data or logic inside of the function doesn't make any sense from memory point of view unless it is not used. 
+> The initial amount of data or logic inside a function doesn’t impact memory usage unless it is actually used.
+
 ```js
 // Short function name 1-4 chars
 function strt() {
@@ -160,9 +161,9 @@ let totl = VORK1.dayRate + VORK1.nightRate + VORK1.dayMaxRate + VORK1.holidayMax
 ```
 
 ## Better Practice
-Short names, max 4 chars. Any name longer than 4 char consumes constantly more memory. :thumbsup:
+Short names, max 4 chars. Any name longer than 4 chars consistently consumes more memory. :+1:
 
-Accessing to any parameter doesnt change the memory usage, as everything is already there. 
+Accessing any parameter doesn't change memory usage, as everything is already loaded.
 
 ```js
 // Define data as JSON
@@ -186,7 +187,8 @@ let totl = tRt.VRK1.dRt + tRt.VRK1.nRt + tRt.VRK1.dMRt + tRt.VRK1.hMRt;
 
 ## Best Practice 
 ### Define data
-Data is defined inside a function and accessed only when it required, this is called LazyLoad technique. :thumbsup:
+
+Data defined inside a function and accessed only when required is called the LazyLoad technique. :+1:
 
 ```js
 // Define data inside a function
@@ -210,7 +212,8 @@ function tRt() {
 
 **Bad Practice**
 
-This is bad practice as the whole dataset loaded into memory and now the outcome is same with the previous example. :thumbsdown:
+It's a bad practice to load the entire dataset into memory. The outcome is the same as the previous example. :-1:
+
 ```js
 // Load full data into variable and use it partially
 let tRt = tRt();
@@ -220,8 +223,8 @@ let totl = tRt.VRK1.dRt + tRt.VRK1.nRt + tRt.VRK1.dMRt + tRt.VRK1.hMRt;
 
 **Better Practice**
 
-There is only peak memory load when the program reads the data and after that the memory released. :thumbsup:
-However, creating variables from that data is consuming more memory than without a variable.
+There is only a peak memory load when the program reads the data, and after that, the memory is released. :+1:
+However, creating variables from that data consumes more memory than without a variable.
 
 ```js
 // Load only required data into variable
@@ -230,11 +233,12 @@ let totl = vrk1.dRt + vrk1.nRt + vrk1.dMRt + vrk1.hMRt;
 // Memory Used: 238 Peak: 994
 ```
 
-**Best Practice** :thumbsup: :thumbsup:
+**Best Practice**
 
-Two important things here to consider:
-1. The only variable is the the sum of all the values. 
-2. The variable name must be exactly as the function name to gain the biggest benefit. I just randomly figured this out. :thumbsup:
+Two important things to consider here:
+
+1. The only variable should be the sum of all the values.
+2. The variable name should be exactly the same as the function name to gain the biggest benefit. I just randomly figured this out. :thumbsup:
 
 ```js
 // Load data as needed, without creating variable
@@ -249,8 +253,8 @@ let tRt = tRt().VRK1.dRt + tRt().VRK1.nRt + tRt().VRK1.dMRt + tRt().VRK1.hMRt;
 ```
 
 # Parsing JSON 
-1. Use string search to get data from large JSON. This is significant memory improvement. :thumbsup:
-2. Do not parse the whole JSON into memory. :thumbsdown:
+Use string search to extract data from large JSON. This is a significant memory improvement. :+1:
+Do not parse the entire JSON into memory. :-1:
 
 ```js
 // Define data as string
