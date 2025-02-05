@@ -7,6 +7,7 @@
 Small scripts can run without optimization, but as they grow, they quickly hit the memory limit. When this happens, you will simply receive an "Out of Memory" message with no further details.
 
 - [Shelly Script Memory Optimization](#shelly-script-memory-optimization)
+- [Memory Optimization Recommendations in a Nutshell](#memory-optimization-recommendations-in-a-nutshell)
 - [Variable names](#variable-names)
 - [Values](#values)
 - [Function names](#function-names)
@@ -30,6 +31,16 @@ Using these methods, such as short variable names or text-searching JSON instead
 
 > [!TIP]
 > Shelly doesn’t care about human readability—only efficiency.
+
+# Memory Optimization Recommendations in a Nutshell
+
+1. **Keep it short** – Use variable and function names with a maximum of 4 characters.
+2. **Go local** – Prioritize local variables and minimize the use of global variables.
+3. **Minimize variables** – If a value is used only once or twice, avoid creating a dedicated variable.
+4. **Load smartly** – Extract only the necessary data instead of loading an entire dataset into memory.
+5. **Fewer functions** – Merge smaller functions into larger, more efficient code blocks.
+6. **Inline trivial logic** – Instead of separate functions for simple calculations, integrate them into the main function.
+7. **Efficient data handling** – Use string search instead of JSON.parse() for handling large datasets, as parsing consumes a lot of memory.
 
 # Variable names
 
