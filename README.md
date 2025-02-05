@@ -19,7 +19,7 @@ Small scripts can run without optimization, but as they grow, they quickly hit t
     - [Define data](#define-data)
     - [Accessing to the data.](#accessing-to-the-data)
 - [Parsing JSON](#parsing-json)
-  - [Author](#author)
+- [Author](#author)
 
 
 > [!IMPORTANT]
@@ -292,7 +292,7 @@ let rssi = data.substring(rsId, data.indexOf("}", rsId));
 
 ```
 
-## Author
+# Author
 
 Created by Leivo Sepp, 07.01.2025
 
